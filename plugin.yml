@@ -1,0 +1,5 @@
+main: main.lua
+version: 1.0
+name: NoSleep
+description: Prevent players from sleeping
+author: TheGamingMahi
