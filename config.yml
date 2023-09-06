@@ -1,0 +1,12 @@
+# Configuration file for the NoSleep plugin
+# Set various options for the plugin
+
+# Should the player be killed when trying to sleep?
+# Set to true to kill the player, false to prevent sleep without killing.
+Kill-the-player-On-Sleep: false
+
+# Enable or disable the sleep message when players try to sleep
+Enable-Sleep-Message: true
+
+# The message sent to players when they try to sleep (if enabled)
+On-Sleep-Message: "Sleeping not allowed in this server"

@@ -1,11 +1,8 @@
 -- Create a storage object with the file "config.yml"
 local pluginConfig = plugin.getStorageObject("config.yml")
 
--- Set default values for the configuration
-pluginConfig:setDefaultValue("Kill-the-player-On-Sleep", false)
-pluginConfig:setDefaultValue("Enable-Sleep-Message", true)
-pluginConfig:setDefaultValue("On-Sleep-Message", "Sleeping not allowed in this server")
-pluginConfig:save() -- Save default values
+-- Export the resource if it doesn't exist (replace set to false)
+plugin.exportResource("config.yml", false)
 
 -- Retrieve the configuration values
 local PlayerKill = pluginConfig:getValue("Kill-the-player-On-Sleep")
@@ -15,6 +12,10 @@ local EnableSleepMessage = pluginConfig:getValue("Enable-Sleep-Message")
 -- Register plugin events
 plugin.onEnable(function()
     logger.info("NoSleep plugin enabled!")
+end)
+
+plugin.onLoad(function()
+    logger.info("NoSleep Plugin loaded")
 end)
 
 plugin.onDisable(function()
@@ -36,3 +37,4 @@ plugin.registerEvent("PlayerBedEnterEvent", function(event)
 
     event:setCancelled(true) -- Cancel sleep
 end)
+
